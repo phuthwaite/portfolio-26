@@ -5,6 +5,7 @@ import Hero from "./sections/Hero";
 import Dock from "./components/Dock";
 import { Slide } from "./components/SlideStack";
 import { useSlideStack } from "./hooks/useSlideStack";
+import { useHeroFit } from "./hooks/useHeroFit";
 import ClientLogos from "./sections/ClientLogos";
 import CaseStudies from "./sections/CaseStudies";
 import Profile from "./sections/Profile";
@@ -32,6 +33,8 @@ function BackgroundGradientTop() {
 export default function App() {
   const stack = useRef<HTMLElement>(null);
   const { active, heroHidden } = useSlideStack(stack);
+  // the hero shrinks on short screens so it and the client logos fit the first screen
+  useHeroFit();
   // a case study deck, open over the page when the address is /case-studies/<id>
   const deckId = useDeckRoute();
   const deck = deckId ? caseStudyDecks[deckId] : undefined;

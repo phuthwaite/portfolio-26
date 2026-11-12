@@ -1,6 +1,7 @@
 import SectionHeading from "../components/SectionHeading";
 import Widget from "../components/Widget";
 import { profile } from "../data/content";
+import Testimonials from "./Testimonials";
 
 // A titled set of tag groups (Skillset, Toolkit): each group gets a small heading above its tags
 function GroupedTags({ groups }: { groups: { group: string; items: string[] }[] }) {
@@ -28,7 +29,8 @@ function Tags({ items }: { items: string[] }) {
   );
 }
 
-// Figma: profile content — About on the left, Skillset/Toolkit on the right, filled from the CV
+// Figma: profile content — About (with LinkedIn recommendations) on the left, Skillset/Toolkit on the right,
+// filled from the CV
 export default function Profile() {
   return (
     <section id="profile" className="pt-[15px] pb-32 lg:min-h-[739px] lg:pb-40">
@@ -43,6 +45,8 @@ export default function Profile() {
                 </p>
               ))}
             </Widget>
+            {/* LinkedIn recommendations, near the top of the page so they're seen early */}
+            <Testimonials />
             <Widget label="Education">
               <ul className="flex flex-col gap-4">
                 {profile.education.map((ed) => (

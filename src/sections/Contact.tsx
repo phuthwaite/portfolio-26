@@ -3,10 +3,9 @@ import { Label } from "../components/Widget";
 import { FillUnderline, LinkArrow } from "../components/LinkDecor";
 import { track } from "../lib/analytics";
 import { contact } from "../data/content";
-import Testimonials from "./Testimonials";
 
-// The Contact frame only contains its title in Figma; the details come from the CV, with LinkedIn
-// recommendations beside them on desktop (below them on phones).
+// The Contact frame only contains its title in Figma; the details come from the CV. (The LinkedIn
+// recommendations that sat beside them are now in Profile, higher up the page.)
 export default function Contact() {
   return (
     <section
@@ -46,7 +45,6 @@ export default function Contact() {
               );
             })}
           </ul>
-          <Testimonials className="lg:flex-1" />
         </div>
       </div>
     </section>

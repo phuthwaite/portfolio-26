@@ -44,7 +44,7 @@ function CaseStudyPreview({
     <article
       aria-labelledby={`case-study-${study.id}`}
       // --art-shift: the artwork's sideways nudge, applied on desktop only (none while stats show)
-      className="relative flex flex-col pt-[35px] lg:block lg:h-[530px] lg:[--art-shift:var(--art-shift-lg)]"
+      className="relative flex flex-col pt-[35px] lg:block lg:min-h-[530px] lg:[--art-shift:var(--art-shift-lg)]"
       style={
         {
           "--accent": study.accent,
@@ -215,12 +215,13 @@ export default function CaseStudies() {
       aria-label="Case studies"
       {...edgeNav}
       // The panel spans the full width and clips the artwork. (Figma fills it #1a1a1a; for now it
-      // shows the page background like the other sections.)
-      className={`relative flex flex-col overflow-hidden pt-[15px] pb-12 lg:block lg:min-h-[max(681px,100vh)] lg:pb-0 ${cursorClass}`}
+      // shows the page background like the other sections.) On desktop the title and the previews share
+      // one grid cell, so the section grows with the tallest preview and the slide scrolls to show it all.
+      className={`relative flex flex-col overflow-hidden pt-[15px] pb-12 lg:grid lg:min-h-[max(681px,100vh)] lg:pb-0 ${cursorClass}`}
     >
       {/* the title (with the carousel controls at its right) stays put while the previews change
           beneath it; the controls hide when there's only one study */}
-      <div className="site-container pointer-events-none relative z-10 order-1">
+      <div className="site-container pointer-events-none relative z-10 order-1 lg:col-start-1 lg:row-start-1 lg:self-start">
         <SectionHeading
           aside={
             count > 1 && (
@@ -247,7 +248,7 @@ export default function CaseStudies() {
         onKeyDown={onKeyDown}
         onWheel={onWheel}
         onClickCapture={onClickCapture}
-        className="order-2 grid touch-pan-y outline-none select-none focus-visible:ring-1 focus-visible:ring-white/30 lg:absolute lg:inset-0"
+        className="order-2 grid touch-pan-y outline-none select-none focus-visible:ring-1 focus-visible:ring-white/30 lg:col-start-1 lg:row-start-1"
       >
         {caseStudies.map((study, i) => {
           const offset = i - position;
@@ -264,7 +265,8 @@ export default function CaseStudies() {
                 visibility: Math.abs(offset) < 1 ? "visible" : "hidden",
               }}
             >
-              <div className="site-container relative h-full lg:pt-[131px]">
+              {/* the bottom padding keeps "Read more" clear of the dock, as in the other sections */}
+              <div className="site-container relative h-full lg:pt-[131px] lg:pb-40">
                 <CaseStudyPreview study={study} offset={offset} />
               </div>
             </div>

@@ -88,7 +88,7 @@ function Marquee({ items, seconds, reverse = false, className = "" }: { items: L
 // The edges fade out; hovering pauses it; reduced motion shows a still, wrapped list instead.
 export default function ClientLogos({ className = "" }: { className?: string }) {
   return (
-    <section aria-labelledby="clients-label" className={className}>
+    <section id="clients" aria-labelledby="clients-label" className={className}>
       {/* says what the logos are; styled like the site's other small labels */}
       <p
         id="clients-label"

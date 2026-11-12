@@ -1,4 +1,4 @@
-import { useState, type CSSProperties, type MouseEvent, type PointerEvent } from "react";
+import { useEffect, useState, type CSSProperties, type MouseEvent, type PointerEvent } from "react";
 import NavTile from "./NavTile";
 import { navItems, type SectionId } from "../data/content";
 import { track } from "../lib/analytics";
@@ -42,6 +42,18 @@ export default function Dock({
 }) {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
+  // The first time the dock appears, its icons hop up one after another, so it catches the eye
+  // (it's easy to miss otherwise). Once per visit; off for anyone who prefers reduced motion (CSS).
+  const [greeted, setGreeted] = useState(false);
+  const [greeting, setGreeting] = useState(false);
+  useEffect(() => {
+    if (!visible || greeted) return;
+    setGreeted(true);
+    setGreeting(true);
+    const timer = setTimeout(() => setGreeting(false), 2000);
+    return () => clearTimeout(timer);
+  }, [visible, greeted]);
+
   // Magnify follows a mouse only; touch taps go straight to the section.
   const hover = (index: number) => (e: PointerEvent) => {
     if (e.pointerType === "mouse") setHoveredIndex(index);
@@ -69,7 +81,7 @@ export default function Dock({
         }`}
       >
         <div
-          className="dock-container"
+          className={`dock-container ${greeting ? "dock-greeting" : ""}`}
           onMouseLeave={() => setHoveredIndex(null)}
         >
           {dockItems.map((item, index) => {
@@ -83,6 +95,7 @@ export default function Dock({
               <div
                 key={item.id}
                 className={`dock-item ${isHovered ? "dock-item-hovered" : ""}`}
+                style={{ "--i": index } as CSSProperties}
                 onPointerEnter={hover(index)}
               >
                 <a

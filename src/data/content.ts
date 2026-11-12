@@ -656,11 +656,8 @@ export type CaseStudy = {
   href: string;
 };
 
-// TODO: every summary is placeholder copy carried over from the Figma file; replace with each story.
-const placeholderSummary = [
-  "With two years of invaluable experience in my role at Harmony Technology –– a tech company based here in Rabat, I have honed my skills in React.js, Next.js, TailwindCSS, and TypeScript, allowing me to craft seamless and interactive user experiences. During my time at Harmony Technology,",
-  " had the privilege of collaborating on projects for esteemed clients such as the Ministry of Health, Ministry of Education, and Ministry of Justice. It was an incredibly rewarding experience to develop applications that directly impact the lives of Moroccan citizens.",
-];
+// TODO: Holibob still needs its summary.
+const placeholderSummary = ["Full case study coming soon."];
 
 // Figma: HB 2, VW 2, SS 2, AXS 2, TWC 2 — ordered most recent first, as in Experience.
 // `href`: the study's full page (/case-studies/<id>) once it exists; "#case-studies" until then.
@@ -693,7 +690,7 @@ export const caseStudies: CaseStudy[] = [
     logoHeight: 35,
     company: "Volkswagen Group UK",
     summary: [
-      "A production-ready, multi-brand email design system in Figma, delivered for Volkswagen Group by Ekino/Havas. Over almost a year, the project ran from discovery and research through design, build and testing to handoff, with full documentation and training for the teams using it. One modular system covers Audi, VW Passenger Cars, VW Commercial Vehicles, Škoda, CUPRA and SEAT, while keeping each brand's identity distinct.",
+      "A production-ready, multi-brand email design system in Figma for Volkswagen Group. One modular system covers Audi, VW Passenger Cars, VW Commercial Vehicles, Škoda, CUPRA and SEAT, keeping each brand distinct – taken from discovery to handoff, with documentation and training.",
     ],
     stats: [{ value: "60%", label: "reduction in production time" }],
     artAlt:
@@ -710,7 +707,7 @@ export const caseStudies: CaseStudy[] = [
     logoHeight: 24,
     company: "Samsung Electronics UK",
     summary: [
-      "The UK launch campaign for the Galaxy S21: an end-to-end rewards journey to onboard new flagship owners while also capturing upgrades from older Samsung models and trade-ins from other brands. The design streamlined complex token distribution and copying codes between apps into a friction-free redemption path, maximising post-purchase satisfaction across the launch window.",
+      "The UK launch campaign for the Galaxy S21: an end-to-end rewards journey for new owners, upgraders and trade-ins. The design turned complex token distribution and code copying between apps into a friction-free redemption path.",
     ],
     stats: [
       { value: "3", label: "Targeted User Flows" },
@@ -732,7 +729,7 @@ export const caseStudies: CaseStudy[] = [
     logoHeight: 27.71,
     company: "AXS Europe - Live Event Ticketing",
     summary: [
-      "A modular, multi-brand redesign of the order confirmation and e-ticket emails AXS sends after every purchase. Text-heavy, barely branded emails became clearly structured sections for event, ticket, order and venue details, in one template reskinned for venues, promoters and events. Built in XSLT across two back-end systems, the suite grew to cover season tickets, upgrades, Swedish localisation and more.",
+      "A modular, multi-brand redesign of AXS’s order confirmation and e-ticket emails. Text-heavy, barely branded emails became clearly structured sections in one template, reskinned for venues, promoters and events, and extended to season tickets, upgrades and Swedish localisation.",
     ],
     stats: [
       { value: "97%", label: "open rate" },
@@ -756,7 +753,7 @@ export const caseStudies: CaseStudy[] = [
     logoHeight: 34,
     company: "The White Company",
     summary: [
-      "A redesign of The White Company's product listing and detail pages, along with key checkout flows, for desktop and mobile. Shaped by competitive analysis, user research and data synthesis, the work progressed from wireframes and prototypes to high-fidelity designs, presented to C-level stakeholders and delivered in close partnership with the development team to meet the business goals.",
+      "A redesign of The White Company’s product listing and detail pages and key checkout flows, for desktop and mobile. Research-led, it moved from wireframes and prototypes to high-fidelity designs, delivered with the development team to meet the business goals.",
     ],
     stats: [
       { value: "17%", label: "conversion rate increase" },

@@ -136,6 +136,23 @@ body {
   outline: none;
 }
 
+/* The dock's hello the first time it appears: each icon hops in turn, after the dock has risen into place */
+@keyframes dockHello {
+  0%, 100% { translate: 0 0; }
+  40% { translate: 0 -10px; }
+}
+
+.dock-greeting .dock-item {
+  animation: dockHello 0.55s cubic-bezier(0.3, 0, 0.3, 1) both;
+  animation-delay: calc(450ms + var(--i) * 90ms);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dock-greeting .dock-item {
+    animation: none;
+  }
+}
+
 .dock-label {
   font-size: 9px;
   font-weight: 500;

@@ -53,7 +53,7 @@ function Avatar({ name }: { name: string }) {
 // Time each quote stays up before the next slides in
 const AUTOPLAY_MS = 9000;
 
-// LinkedIn recommendations in the Contact section: one quote at a time, sliding sideways with the
+// LinkedIn recommendations in the Profile section: one quote at a time, sliding sideways with the
 // direction of travel (the outgoing quote clears before the next arrives, as in Case Studies). They
 // advance on their own, slowly, looping round; the arrows (or arrow keys) still step through them and
 // restart the timer. Autoplay pauses while the panel is hovered or focused, off screen or in a hidden
