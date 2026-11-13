@@ -18,10 +18,8 @@ export type SectionId = (typeof navItems)[number]["id"];
 export const profile = {
   // TODO: the CV has no written bio, so this is its headline; replace with an intro in your own words.
   about: [
-    "Product and experience Designer with 20+ years' experience leading the design of digital products for global brands across travel, media, entertainment, gaming, technology and ecommerce.",
-    "Experienced in shaping product strategy, leading end-to-end design across the full product lifecycle, and collaborating with cross-functional teams to deliver user-centred, commercially effective solutions.",
-    "Combining strong UX research, interaction design and visual design expertise with practical application of AI to enhance research, ideation, prototyping and design workflows, improving both team efficiency and product outcomes.",
-    "Hands-on front-end skills (HTML, CSS, JavaScript, React) for prototyping in code and working closely with engineering to see designs through to production.",
+    "Product and experience designer with 20+ years leading the design of digital products for global brands across travel, media, entertainment, gaming, technology and ecommerce.",
+    "Shaping product strategy and leading end-to-end design: UX research, interaction and visual design, with AI woven into research, ideation and prototyping – plus hands-on front-end skills to prototype in code and see designs through to production.",
   ],
   // Grouped by the part of the job they apply to
   skillset: [
@@ -132,6 +130,12 @@ export const profile = {
 const email = ["hello", ["pixels", "ph"].join(".")].join(
   String.fromCharCode(64),
 );
+
+// The invitation and availability line above the contact links
+export const contactIntro = {
+  invitation: "Let’s talk about your next product.",
+  availability: "Open to permanent and contract roles (ideally outside IR35) · UK-based, remote or hybrid",
+};
 
 export const contact = [
   { label: "Email", text: email, href: `mailto:${email}` },

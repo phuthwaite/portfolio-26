@@ -2,7 +2,7 @@ import SectionHeading from "../components/SectionHeading";
 import { Label } from "../components/Widget";
 import { FillUnderline, LinkArrow } from "../components/LinkDecor";
 import { track } from "../lib/analytics";
-import { contact } from "../data/content";
+import { contact, contactIntro } from "../data/content";
 
 // The Contact frame only contains its title in Figma; the details come from the CV. (The LinkedIn
 // recommendations that sat beside them are now in Profile, higher up the page.)
@@ -14,6 +14,10 @@ export default function Contact() {
     >
       <div className="site-container">
         <SectionHeading>Contact</SectionHeading>
+        <div className="relative flex flex-col gap-3 pt-10">
+          <p className="text-[clamp(24px,3vw,34px)] leading-[1.25] tracking-[-0.01em] text-white text-balance">{contactIntro.invitation}</p>
+          <p className="text-[15px] leading-6 tracking-[0.01em] text-light-gray">{contactIntro.availability}</p>
+        </div>
         <div className="relative flex flex-col gap-14 pt-10 lg:flex-row lg:items-start lg:gap-16">
           <ul className="flex flex-col gap-10 lg:w-[360px] lg:shrink-0">
             {contact.map((item) => {
