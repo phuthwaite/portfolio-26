@@ -18,6 +18,7 @@ import { track, trackOnce } from "../lib/analytics";
 import { useEdgeNav } from "../hooks/useEdgeNav";
 import { caseStudyDecks } from "../case-study/pages";
 import { openDeck } from "../case-study/deckRoute";
+import { Label } from "../components/Widget";
 
 // Show the stats column on each slide (hidden for now; the data stays in content.ts)
 const SHOW_STATS = false;
@@ -98,6 +99,12 @@ function CaseStudyPreview({
               </p>
             ))}
           </div>
+          {study.role && (
+            <div className="mt-5 flex flex-col gap-1.5 lg:w-[323px]">
+              <Label>Role</Label>
+              <p className="text-[14px] leading-[1.55] tracking-[0.01em] text-light-gray">{study.role}</p>
+            </div>
+          )}
           {/* Figma: cta */}
           {/* the site's own case study pages open in the same tab; anything external opens a new one */}
           <a

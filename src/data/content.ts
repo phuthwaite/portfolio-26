@@ -651,6 +651,8 @@ export type CaseStudy = {
   logoWidth: number;
   logoHeight: number;
   company: string;
+  /** Role and contribution, shown under the summary (third person, like the summary) */
+  role?: string;
   summary: string[];
   stats: { value: string; label: string }[];
   /** Describes the artwork (drawn by sections/case-study-art, keyed by id) */
@@ -693,6 +695,7 @@ export const caseStudies: CaseStudy[] = [
     logoWidth: 35,
     logoHeight: 35,
     company: "Volkswagen Group UK",
+    role: "Experience Lead, via Havas CX, for almost a year: discovery and research, system architecture, design and build with developers, documentation and training.",
     summary: [
       "A production-ready, multi-brand email design system in Figma for Volkswagen Group. One modular system covers Audi, VW Passenger Cars, VW Commercial Vehicles, Škoda, CUPRA and SEAT, keeping each brand distinct – taken from discovery to handoff, with documentation and training.",
     ],
@@ -710,6 +713,7 @@ export const caseStudies: CaseStudy[] = [
     logoWidth: 154.44,
     logoHeight: 24,
     company: "Samsung Electronics UK",
+    role: "Lead UX, via Cheil, across an eight-week launch: research, journey mapping, flow diagrams, wireframes and prototypes, working with product, development and visual design.",
     summary: [
       "The UK launch campaign for the Galaxy S21: an end-to-end rewards journey for new owners, upgraders and trade-ins. The design turned complex token distribution and code copying between apps into a friction-free redemption path.",
     ],
@@ -732,6 +736,7 @@ export const caseStudies: CaseStudy[] = [
     logoWidth: 64,
     logoHeight: 27.71,
     company: "AXS Europe - Live Event Ticketing",
+    role: "Sole UX/UI designer in the UK: research, wireframes and design, then building and testing the templates in XSLT alongside development.",
     summary: [
       "A modular, multi-brand redesign of AXS’s order confirmation and e-ticket emails. Text-heavy, barely branded emails became clearly structured sections in one template, reskinned for venues, promoters and events, and extended to season tickets, upgrades and Swedish localisation.",
     ],
@@ -756,6 +761,7 @@ export const caseStudies: CaseStudy[] = [
     logoWidth: 163.46,
     logoHeight: 34,
     company: "The White Company",
+    role: "Lead UX consultant, working with the Product Manager and reporting to the Head of Digital: research, flows, wireframes, prototypes and high-fidelity design.",
     summary: [
       "A redesign of The White Company’s product listing and detail pages and key checkout flows, for desktop and mobile. Research-led, it moved from wireframes and prototypes to high-fidelity designs, delivered with the development team to meet the business goals.",
     ],
