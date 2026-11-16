@@ -5,7 +5,7 @@ import { track } from "../lib/analytics";
 import { contact, contactIntro } from "../data/content";
 
 // The Contact frame only contains its title in Figma; the details come from the CV. (The LinkedIn
-// recommendations that sat beside them are now in Profile, higher up the page.)
+// recommendations have their own section, after Case Studies.)
 export default function Contact() {
   return (
     <section

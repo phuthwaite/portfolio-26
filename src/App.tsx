@@ -9,6 +9,7 @@ import { useHeroFit } from "./hooks/useHeroFit";
 import ClientLogos from "./sections/ClientLogos";
 import CaseStudies from "./sections/CaseStudies";
 import Profile from "./sections/Profile";
+import Testimonials from "./sections/Testimonials";
 import DesignWork from "./sections/DesignWork";
 import Experience from "./sections/Experience";
 import Contact from "./sections/Contact";
@@ -78,6 +79,10 @@ export default function App() {
         </Slide>
         <Slide section="case-studies" className="lg:min-h-screen">
           <CaseStudies />
+        </Slide>
+        {/* recommendations straight after the work they vouch for; part of Case Studies in the nav */}
+        <Slide section="case-studies" className="lg:min-h-screen">
+          <Testimonials />
         </Slide>
         <Slide section="profile" className="lg:min-h-screen">
           <Profile />
