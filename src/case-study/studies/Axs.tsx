@@ -73,7 +73,7 @@ export const axs: DeckDef = {
             <p className="mt-4 text-[24px] leading-[1.2] font-medium tracking-[0.04em] lg:mt-[1.04cqw] lg:text-[2.5cqw]">
               AXS Europe
               <br />
-              Live Event Ticketing
+              Live Event Ticketing / 2017–2021
             </p>
           </At>
           <CoverArt />

@@ -247,7 +247,7 @@ export const experience: Job[] = [
     period: "2021–2022",
     type: "Contract",
     brief:
-      "CRM email for six Volkswagen Group brands, delivered with Ekino/Havas.",
+      "CRM email for six Volkswagen Group brands, delivered with Havas.",
     summary:
       "Led the experience design of a Figma-based email design system: interchangeable brand and component libraries, production-ready responsive templates, and comprehensive documentation covering complex customer journeys across VW Passenger Cars, VW Commercial Vehicles, Audi, Škoda, SEAT and CUPRA.",
   },
@@ -695,7 +695,7 @@ export const caseStudies: CaseStudy[] = [
     logoWidth: 35,
     logoHeight: 35,
     company: "Volkswagen Group UK",
-    role: "Experience Lead, via Havas CX, for almost a year: discovery and research, system architecture, design and build with developers, documentation and training.",
+    role: "Experience Lead, via Havas, for almost a year: discovery and research, system architecture, design and build with developers, documentation and training.",
     summary: [
       "A production-ready, multi-brand email design system in Figma for Volkswagen Group. One modular system covers Audi, VW Passenger Cars, VW Commercial Vehicles, Škoda, CUPRA and SEAT, keeping each brand distinct – taken from discovery to handoff, with documentation and training.",
     ],
@@ -755,7 +755,7 @@ export const caseStudies: CaseStudy[] = [
   },
   {
     id: "twc",
-    title: "Ecommerce Discovery & Checkout",
+    title: "Ecommerce Discovery & Checkout UX/UI",
     logo: twcLogo,
     logoAlt: "The White Company",
     logoWidth: 163.46,

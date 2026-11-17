@@ -77,7 +77,7 @@ export const vw: DeckDef = {
             <p className="mt-4 text-[24px] leading-[1.2] font-medium tracking-[0.04em] lg:mt-[1.04cqw] lg:text-[2.5cqw]">
               Volkswagen Group UK
               <br />
-              Havas CX / 2021–2022
+              Havas / 2021–2022
             </p>
           </At>
           <CoverArt />
@@ -128,7 +128,7 @@ export const vw: DeckDef = {
             <div className={type.body}>
               <p>
                 I was tasked with creating a modular email design system for Volkswagen Group UK, on behalf of leading digital media agency{" "}
-                <strong>Havas CX</strong>.
+                <strong>Havas</strong>.
               </p>
               <p>
                 With support from Product Managers and Programme/Creative Directors, and working directly with developers, I was{" "}
