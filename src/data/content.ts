@@ -745,7 +745,7 @@ export const caseStudies: CaseStudy[] = [
       { value: "12%", label: "fewer ticket support queries" },
     ],
     artAlt:
-      "Printed and folded AXS e-tickets for a Wasps v Harlequins rugby match",
+      "AXS order confirmation emails for The O2, Indigo at The O2, LIVE and Wasps, with a printed e-ticket and a mobile ticket",
     // AXS blue (#007DFF), lightened slightly for legibility on the page
     accent: "#2E93FF",
     href: "/case-studies/axs",
