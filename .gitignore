@@ -23,7 +23,7 @@ dist-ssr
 *.sln
 *.sw?
 
-# Local Claude Code settings
+# Local tool settings
 .claude
 
 # Slide captures for Figma (scripts/capture-decks.mjs)
