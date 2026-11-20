@@ -38,7 +38,7 @@ export default function Contact() {
                   >
                     <span className="inline-flex items-center gap-1.5 text-lg leading-[1.4] font-semibold tracking-[0.08em] uppercase">
                       {item.text}
-                      <LinkArrow className="size-[0.8em]" />
+                      <LinkArrow className="-my-1 size-[1.25em]" />
                     </span>
                     <FillUnderline />
                     {external && (

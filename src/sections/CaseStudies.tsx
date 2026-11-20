@@ -125,7 +125,7 @@ function CaseStudyPreview({
                 : {study.title}
                 {external && " (opens in a new tab)"}
               </span>
-              <LinkArrow className="size-[0.8em]" />
+              <LinkArrow className="-my-1 size-[1.25em]" />
             </span>
             <FillUnderline />
           </a>

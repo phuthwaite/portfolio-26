@@ -18,10 +18,10 @@ export function LinkArrow({ className = "" }: { className?: string }) {
       viewBox="0 0 24 24"
       fill="none"
       stroke="currentColor"
-      strokeWidth="1.5"
+      strokeWidth="2.25"
       strokeLinecap="round"
       strokeLinejoin="round"
-      className={`shrink-0 opacity-40 transition-[opacity,translate] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:opacity-100 group-focus-visible:opacity-100 ${className}`}
+      className={`shrink-0 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 ${className}`}
     >
       <path d="M7 17 17 7M8 7h9v9" />
     </svg>
