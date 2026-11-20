@@ -14,7 +14,7 @@ import clothing from "../../assets/gallery/twc-clothing.png";
 import fragrance from "../../assets/gallery/twc-fragrance.png";
 import avatar from "../../assets/case-studies/samsung/avatar.webp";
 
-// The "Ecommerce Discovery & Checkout UX/UI" deck, from the case study in Figma (px.ph.26, nodes 239:5286 and 239:5276), in
+// The "Ecommerce UX/UI Redesign" deck, from the case study in Figma (px.ph.26, nodes 239:5286 and 239:5276), in
 // the same style as the Samsung deck: a charcoal background with a soft glow in the study's accent colour from the
 // home page (#DDDDDD). Positions are percentages of the 1920×1080 slide.
 
@@ -50,7 +50,7 @@ function Screens({ src, alt }: { src: string; alt: string }) {
 
 export const twc: DeckDef = {
   id: "twc",
-  title: "Ecommerce Discovery & Checkout UX/UI",
+  title: "Ecommerce UX/UI Redesign",
   client: "The White Company",
   footer: "UX Case Study: The White Company",
   backgrounds: { cover: bg, dark: bg },
@@ -62,7 +62,7 @@ export const twc: DeckDef = {
         <>
           <At x={3.65} y={30} w={46}>
             <img src={logo} alt="The White Company" width={163} height={34} className="mb-6 h-auto w-[200px] lg:mb-[2.6cqw] lg:w-[14cqw]" />
-            <h1 className={type.h1}>Ecommerce Discovery &amp; Checkout UX/UI</h1>
+            <h1 className={type.h1}>Ecommerce UX/UI Redesign</h1>
             <p className="mt-4 text-[24px] leading-[1.2] font-medium tracking-[0.04em] lg:mt-[1.04cqw] lg:text-[2.5cqw]">
               The White Company
               <br />

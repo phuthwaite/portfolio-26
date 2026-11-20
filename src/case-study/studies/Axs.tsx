@@ -5,14 +5,17 @@ import { At, Img, SideCopy, Sidebar, SlideHeader, type } from "../slide";
 import bg from "../../assets/case-studies/axs/bg.svg";
 import logo from "../../assets/case-studies/axs-logo.svg";
 import before from "../../assets/case-studies/axs/before.webp";
-import skins from "../../assets/case-studies/axs/skins.webp";
-import early from "../../assets/case-studies/axs/early.webp";
+import hero from "../../assets/case-studies/axs/hero.webp";
+import stack from "../../assets/case-studies/axs/stack.webp";
+import process from "../../assets/case-studies/axs/process.webp";
 import wireFinal from "../../assets/case-studies/axs/wire-final.webp";
 import tech from "../../assets/case-studies/axs/tech.webp";
+import data from "../../assets/case-studies/axs/data.webp";
 import mobile from "../../assets/case-studies/axs/mobile.webp";
 import desktop from "../../assets/case-studies/axs/desktop.webp";
 import full from "../../assets/case-studies/axs/full.webp";
 import etickets from "../../assets/case-studies/axs/etickets.webp";
+import backoffice from "../../assets/case-studies/axs/backoffice.webp";
 import avatar from "../../assets/case-studies/samsung/avatar.webp";
 
 // The AXS order email deck, from the case study notes and image board in Figma (px.ph, nodes 667:6904 and
@@ -21,11 +24,15 @@ import avatar from "../../assets/case-studies/samsung/avatar.webp";
 
 const caption = "mt-2 text-[13px] text-white/70 italic lg:mt-[0.6cqw] lg:text-[0.94cqw]";
 
-// The new order confirmation email, open in an inbox (cover and last slide)
+// Order emails for several brands, an e-ticket and the mobile ticket (cover and last slide)
 function CoverArt() {
   return (
-    <At x={52} y={12} w={42} h={76} className="max-lg:mt-4">
-      <Img src={desktop} alt="The redesigned AXS order confirmation email, open in an inbox" className="drop-shadow-[0_2cqw_3cqw_rgb(0_0_0/0.45)]" />
+    <At x={52} y={9} w={42} h={82} className="max-lg:mt-4">
+      <Img
+        src={hero}
+        alt="Order confirmation emails for The O2, Indigo at The O2, LIVE and Wasps, with a printed e-ticket and a mobile ticket"
+        className="drop-shadow-[0_2cqw_3cqw_rgb(0_0_0/0.45)]"
+      />
     </At>
   );
 }
@@ -57,7 +64,7 @@ function Bullets({ items, className = "" }: { items: readonly ReactNode[]; class
 
 export const axs: DeckDef = {
   id: "axs",
-  title: "Multi-Brand CRM & Ticket Design",
+  title: "CRM Template System",
   client: "AXS",
   footer: "UX Case Study: AXS Europe",
   backgrounds: { cover: bg, dark: bg },
@@ -67,54 +74,31 @@ export const axs: DeckDef = {
       bg: "cover",
       content: (
         <>
-          <At x={3.65} y={28} w={46}>
+          <At x={3.65} y={34} w={46}>
             <img src={logo} alt="AXS" width={64} height={28} className="mb-6 h-auto w-[110px] lg:mb-[2.6cqw] lg:w-[7.5cqw]" />
-            <h1 className={type.h1}>Multi-Brand CRM & Ticket Design</h1>
-            <p className="mt-4 text-[24px] leading-[1.2] font-medium tracking-[0.04em] lg:mt-[1.04cqw] lg:text-[2.5cqw]">
-              AXS Europe
-              <br />
-              Live Event Ticketing / 2017–2021
-            </p>
+            <h1 className={type.h1}>CRM Template System</h1>
           </At>
           <CoverArt />
         </>
       ),
     },
     {
-      label: "Role",
+      label: "Role and Scope",
       bg: "dark",
       content: (
         <>
           <SlideHeader section="Overview" number="1.1" />
-          <At x={3.65} y={19.5} w={50}>
-            <h2 className={`${type.h2} mb-5 lg:mb-[1.5cqw]`}>Role</h2>
-            <div className={type.body}>
-              <p>
-                The project began early in my four years at AXS, and continued right up to my last days there.
-              </p>
-              <p>
-                As the <strong>sole UX/UI designer in the UK</strong>, I was asked by a Product Manager to improve the design of the order
-                confirmation emails sent to customers after buying tickets.
-              </p>
-            </div>
-          </At>
-        </>
-      ),
-    },
-    {
-      label: "Scope and Constraints",
-      bg: "dark",
-      content: (
-        <>
-          <SlideHeader section="Overview" number="1.2" />
           <At x={3.65} y={19.5} w={44}>
-            <h2 className={`${type.h2} mb-5 lg:mb-[1.5cqw]`}>Scope & Constraints</h2>
+            <h2 className={`${type.h2} mb-5 lg:mb-[1.5cqw]`}>Role & Scope</h2>
             <div className={type.body}>
               <p>
-                The original emails were text-heavy, with little branding: only a small header banner set apart AXS’s main clients – The O2,
-                Wembley Arena, AXS itself and key promoters.
+                As the <strong>sole UX/UI designer in the UK</strong>, I was asked to improve the order confirmation emails customers received
+                after buying tickets – a project that ran through my four years at AXS.
               </p>
-              <p>Branding aside, the text had little formatting, so customers struggled to find the event or order details they needed.</p>
+              <p>
+                The original emails were text-heavy and barely formatted, branded only by a small header banner, so customers struggled to
+                find the details they needed.
+              </p>
             </div>
           </At>
           <At x={56} y={8} w={30} h={84} className="overflow-hidden rounded-[6px] shadow-[0_1cqw_3cqw_rgb(0_0_0/0.45)]">
@@ -131,7 +115,7 @@ export const axs: DeckDef = {
       bg: "dark",
       content: (
         <>
-          <SlideHeader section="Overview" number="1.3" />
+          <SlideHeader section="Overview" number="1.2" />
           <At x={3.65} y={19.5} w={38}>
             <h2 className={`${type.h2} mb-5 lg:mb-[1.5cqw]`}>Project Summary</h2>
             <div className={type.body}>
@@ -145,8 +129,12 @@ export const axs: DeckDef = {
               </p>
             </div>
           </At>
-          <At x={45} y={12} w={51} h={76}>
-            <Img src={skins} alt="The template reskinned for AXS, Indigo at The O2 LIVE, The SSE Arena Wembley and Wasps" />
+          <At x={45} y={8} w={51} h={84}>
+            <Img
+              src={stack}
+              alt="The template reskinned for The O2, Indigo at The O2, LIVE, Wasps, The SSE Arena Wembley and AXS"
+              className="drop-shadow-[0_1cqw_2cqw_rgb(0_0_0/0.4)]"
+            />
           </At>
         </>
       ),
@@ -156,7 +144,7 @@ export const axs: DeckDef = {
       bg: "dark",
       content: (
         <>
-          <SlideHeader section="Overview" number="1.4" />
+          <SlideHeader section="Overview" number="1.3" />
           <At x={3.65} y={14.8} w={45} h={76} className="flex flex-col gap-4 lg:gap-[1.2cqw]">
             <h2 className={type.h2}>Goals</h2>
             <Bullets
@@ -201,7 +189,7 @@ export const axs: DeckDef = {
             </SideCopy>
           </Sidebar>
           <At x={35} y={14} w={61.5} h={72}>
-            <Img src={early} alt="The original email, early wireframes and the first branded designs" />
+            <Img src={process} alt="The email wireframe, and the first designs for each brand built from it" />
           </At>
         </>
       ),
@@ -235,7 +223,7 @@ export const axs: DeckDef = {
       content: (
         <>
           <SlideHeader section="Process" number="2.3" />
-          <At x={3.65} y={19.5} w={60}>
+          <At x={3.65} y={19.5} w={62}>
             <h2 className={`${type.h2} mb-5 lg:mb-[1.5cqw]`}>Under the Hood</h2>
             <div className={type.body}>
               <p>
@@ -244,8 +232,11 @@ export const axs: DeckDef = {
               </p>
             </div>
           </At>
-          <At x={3.65} y={42} w={92.7} h={46}>
+          <At x={3.65} y={44} w={66} h={44}>
             <Img src={tech} alt="Conditional XSLT template code for different data sources" />
+          </At>
+          <At x={73} y={7} w={23.35} h={86}>
+            <Img src={data} alt="The email wireframe annotated with the data points behind each section" />
           </At>
         </>
       ),
@@ -278,7 +269,8 @@ export const axs: DeckDef = {
           <Sidebar>
             <SlideHeader section="Outcome" number="3.1" sidebar />
             <SideCopy title="Results">
-              <p>The templates were rolled out successfully.</p>
+              <p>The templates were rolled out successfully across the UK and Europe.</p>
+              <p>Following this, the US team used this system as a basis for their own CRM template suite.</p>
               <p>Testing was a challenge, but even where the styling wasn’t perfect, order and event details always came across clearly.</p>
             </SideCopy>
           </Sidebar>
@@ -292,14 +284,14 @@ export const axs: DeckDef = {
       ),
     },
     {
-      label: "Enhancements and Variations",
+      label: "Enhancements and Variants",
       bg: "dark",
       content: (
         <>
           <SlideHeader section="Outcome" number="3.2" />
           <At x={3.65} y={14.8} w={44}>
-            <h2 className={`${type.h2} mb-3 lg:mb-[1cqw]`}>Enhancements & Variations</h2>
-            <p className={type.body}>Many were added to the original suite of templates, including:</p>
+            <h2 className={`${type.h2} mb-3 lg:mb-[1cqw]`}>Enhancements & Variants</h2>
+            <p className={type.body}>Many components and variants were added to the original suite of templates, including:</p>
           </At>
           <At x={3.65} y={33} w={44} h={58}>
             <Bullets
@@ -320,8 +312,15 @@ export const axs: DeckDef = {
               ]}
             />
           </At>
-          <At x={51} y={20} w={45} h={60}>
-            <Img src={etickets} alt="E-ticket emails for All Points East, BST Hyde Park and British Summer Time" />
+          <At x={51} y={10} w={36} h={50}>
+            <Img
+              src={backoffice}
+              alt="The back office proposal for setting up e-templates, with each setting annotated"
+              className="drop-shadow-[0_1cqw_2cqw_rgb(0_0_0/0.45)]"
+            />
+          </At>
+          <At x={60} y={52} w={36} h={38}>
+            <Img src={etickets} alt="E-ticket emails for All Points East, BST Hyde Park and British Summer Time" className="drop-shadow-[0_1cqw_2cqw_rgb(0_0_0/0.45)]" />
           </At>
         </>
       ),

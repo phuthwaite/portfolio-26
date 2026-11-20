@@ -689,7 +689,7 @@ export const caseStudies: CaseStudy[] = [
   },
   {
     id: "vw",
-    title: "Multi-Brand CRM Design System",
+    title: "CRM Design System",
     logo: vwLogo,
     logoAlt: "Volkswagen",
     logoWidth: 35,
@@ -730,7 +730,7 @@ export const caseStudies: CaseStudy[] = [
   },
   {
     id: "axs",
-    title: "Multi-Brand CRM & Ticket Design",
+    title: "CRM Template System",
     logo: axsLogo,
     logoAlt: "AXS",
     logoWidth: 64,
@@ -752,7 +752,7 @@ export const caseStudies: CaseStudy[] = [
   },
   {
     id: "twc",
-    title: "Ecommerce Discovery & Checkout UX/UI",
+    title: "Ecommerce UX/UI Redesign",
     logo: twcLogo,
     logoAlt: "The White Company",
     logoWidth: 163.46,

@@ -28,7 +28,7 @@ import docLibVw from "../../assets/case-studies/vw/doc-lib-vw.webp";
 import docLibSeat from "../../assets/case-studies/vw/doc-lib-seat.webp";
 import avatar from "../../assets/case-studies/samsung/avatar.webp";
 
-// The "Email Design System" deck, built from the case study at pixels.ph/volkswagen in the same style as the
+// The "CRM Design System" deck, built from the case study at pixels.ph/volkswagen in the same style as the
 // Samsung deck, on a dark teal background (#0B4250) with a turquoise glow (#4FC8DA): a brighter version of the study's accent on the home page (#B3D7DD). Positions are
 // percentages of the 1920×1080 slide.
 
@@ -61,7 +61,7 @@ function Card({ x, y, w, h, title, children }: { x: number; y: number; w: number
 
 export const vw: DeckDef = {
   id: "vw",
-  title: "Email Design System",
+  title: "CRM Design System",
   client: "Volkswagen Group",
   footer: "UX Case Study: Volkswagen Group UK",
   backgrounds: { cover: bg, dark: bg },
@@ -73,12 +73,8 @@ export const vw: DeckDef = {
         <>
           <At x={3.65} y={36} w={42}>
             <img src={logo} alt="Volkswagen" width={35} height={35} className="mb-6 size-[56px] lg:mb-[2.6cqw] lg:size-[4.2cqw]" />
-            <h1 className={type.h1}>Email Design System</h1>
-            <p className="mt-4 text-[24px] leading-[1.2] font-medium tracking-[0.04em] lg:mt-[1.04cqw] lg:text-[2.5cqw]">
-              Volkswagen Group UK
-              <br />
-              Havas / 2021–2022
-            </p>
+            <h1 className={type.h1}>CRM Design System</h1>
+            <p className="mt-4 text-[24px] leading-[1.2] font-medium tracking-[0.04em] lg:mt-[1.04cqw] lg:text-[2.5cqw]">Volkswagen Group</p>
           </At>
           <CoverArt />
         </>
@@ -118,50 +114,23 @@ export const vw: DeckDef = {
       ),
     },
     {
-      label: "Role and Responsibilities",
+      label: "Role and Scope",
       bg: "dark",
       content: (
         <>
           <SlideHeader section="Overview" number="1.2" />
           <At x={3.65} y={19.5} w={50}>
-            <h2 className={`${type.h2} mb-5 lg:mb-[1.5cqw]`}>Role & Responsibilities</h2>
+            <h2 className={`${type.h2} mb-5 lg:mb-[1.5cqw]`}>Role & Scope</h2>
             <div className={type.body}>
               <p>
-                I was tasked with creating a modular email design system for Volkswagen Group UK, on behalf of leading digital media agency{" "}
-                <strong>Havas</strong>.
+                As <strong>Experience Lead</strong> with <strong>Havas</strong>, I created a production-ready, multi-brand email design system in
+                Figma – from discovery and research to build, QA, documentation and training, over almost a year.
               </p>
               <p>
-                With support from Product Managers and Programme/Creative Directors, and working directly with developers, I was{" "}
-                <strong>Experience Lead</strong> for the whole project – delivering a Figma-based, production-ready, responsive, multi-brand
-                email design system.
+                The MVP recreated each brand’s existing emails like-for-like. Built in silos, they had drifted apart, so visual conflicts were
+                resolved without full redesigns.
               </p>
-              <p>
-                The end-to-end process spanned almost a year: discovery and research, design, build and QA, and handoff with full documentation
-                and training.
-              </p>
-            </div>
-          </At>
-        </>
-      ),
-    },
-    {
-      label: "Scope and Constraints",
-      bg: "dark",
-      content: (
-        <>
-          <SlideHeader section="Overview" number="1.3" />
-          <At x={3.65} y={19.5} w={50}>
-            <h2 className={`${type.h2} mb-5 lg:mb-[1.5cqw]`}>Scope & Constraints</h2>
-            <div className={type.body}>
-              <p>
-                The MVP was a like-for-like recreation of a set of existing emails and modules for VWG brands and sub-brands. Created in silos
-                over the years, they had drifted apart: full redesigns were out of scope, but visual conflicts had to be resolved to make them
-                consistent.
-              </p>
-              <p>
-                Figma had been chosen as the platform – an ideal choice – but few people on the project had used it. That meant ongoing
-                education, and many adjustments to approach and scope along the way.
-              </p>
+              <p>Few on the project had used Figma, which meant ongoing education and adjustments to scope along the way.</p>
             </div>
           </At>
         </>
@@ -172,7 +141,7 @@ export const vw: DeckDef = {
       bg: "dark",
       content: (
         <>
-          <SlideHeader section="Overview" number="1.4" />
+          <SlideHeader section="Overview" number="1.3" />
           {(
             [
               [
