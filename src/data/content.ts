@@ -134,7 +134,7 @@ const email = ["hello", ["pixels", "ph"].join(".")].join(
 // The invitation and availability line above the contact links
 export const contactIntro = {
   invitation: "Let’s talk about your next product.",
-  availability: "Open to permanent and contract roles (ideally outside IR35) · UK-based, remote or hybrid",
+  availability: "Open to permanent and contract roles · UK-based, remote or hybrid",
 };
 
 export const contact = [
@@ -219,8 +219,6 @@ export type Job = {
   role: string;
   period: string;
   type: "Permanent" | "Contract";
-  /** One-line summary shown on every recent role (what the product was, and its scale) */
-  brief?: string;
   /** The full CV blurb, shown when "Details" is switched on */
   summary: string;
   /** Bulleted key projects, shown under the summary */
@@ -236,8 +234,6 @@ export const experience: Job[] = [
     role: "Director, UX Design",
     period: "2023–2026",
     type: "Permanent",
-    brief:
-      "Travel experience platform for millions of travellers, powering partners including On The Beach and Secret Escapes.",
     summary:
       "Led UX across the platform, owning the end-to-end discovery, recommendation, booking and checkout journey for global B2B2C partners such as Amadeus and NEOM. Shaped the consumer-facing experience layer, balancing partner flexibility with emotionally engaging UX.",
   },
@@ -246,8 +242,6 @@ export const experience: Job[] = [
     role: "Experience Lead",
     period: "2021–2022",
     type: "Contract",
-    brief:
-      "CRM email for six Volkswagen Group brands, delivered with Havas.",
     summary:
       "Led the experience design of a Figma-based email design system: interchangeable brand and component libraries, production-ready responsive templates, and comprehensive documentation covering complex customer journeys across VW Passenger Cars, VW Commercial Vehicles, Audi, Škoda, SEAT and CUPRA.",
   },
@@ -256,8 +250,6 @@ export const experience: Job[] = [
     role: "UX Lead",
     period: "2020–2022",
     type: "Contract",
-    brief:
-      "‘Aurora’, a career development and coaching platform for professionals returning to work.",
     summary:
       "Designed the UX and UI for Aurora’s web and native apps, building robust design patterns the team continued to use for new features.",
   },
@@ -266,7 +258,6 @@ export const experience: Job[] = [
     role: "Senior UX Consultant",
     period: "2021",
     type: "Contract",
-    brief: "Samsung’s UK ecommerce and digital platforms.",
     summary:
       "Optimised UX across the platforms, including live AR shopping, loyalty rewards, ratings and reviews, end-to-end purchase journeys and the Galaxy S21 launch rewards campaign.",
   },
@@ -275,7 +266,6 @@ export const experience: Job[] = [
     role: "Senior UX Designer",
     period: "2017–2021",
     type: "Permanent",
-    brief: "Global ticketing platform for live music and sports events.",
     summary:
       "The sole UK-based UX designer, working with cross-functional teams to deliver business-focused, user-friendly ticketing. Key projects:",
     highlights: [
@@ -289,7 +279,6 @@ export const experience: Job[] = [
     role: "Lead UX Designer",
     period: "2016–2017",
     type: "Contract",
-    brief: "International ecommerce site for the luxury lifestyle retailer.",
     summary:
       "Led a redesign of product and checkout journeys, from data analysis and competitor benchmarking through iterative prototyping to C-level stakeholder presentations and developer handoff.",
   },
@@ -387,48 +376,48 @@ const img = (file: string) => gallery[`../assets/gallery/${file}`];
 // showed (sam-journeymap, axs1, axs-pdf, ps-hippo2, twc1, twc-fragrance, mns-feature, sega1) describe
 // what's pictured.
 export const designWork: DesignWorkItem[] = [
-  {
-    client: "Samsung",
-    year: "2021",
-    image: img("sam-report.png"),
-    alt: "Samsung UX report",
-    description:
-      "UX report of research and recommendations for improvements to the ‘Ratings & Reviews’ feature used across samsung.co.uk.",
-  },
-  {
-    client: "Samsung",
-    year: "2021",
-    image: img("sam-recs.png"),
-    alt: "Samsung UX recommendations",
-    description:
-      "UX recommendations for ‘Ratings & Reviews’, detailing LOE estimations and ‘quick wins’.",
-  },
-  {
-    client: "Samsung",
-    year: "2021",
-    image: img("sam-proto.png"),
-    alt: "Samsung Neo QLED prototype",
-    fit: "contain",
-    description:
-      "ProtoPie prototype demonstrating UX optimisation & interactions for the Neo QLED TV feature page.",
-  },
-  {
-    client: "Samsung",
-    year: "2021",
-    image: img("sam-noted.png"),
-    alt: "Annotated Samsung wireframes",
-    fit: "contain",
-    description:
-      "UX wireframes, annotated with the reasoning behind design decisions.",
-  },
-  {
-    client: "Samsung",
-    year: "2021",
-    image: img("sam-journeymap.png"),
-    alt: "Samsung QLED journey map",
-    description:
-      "Journey flow mapping how users move from the QLED feature page through to product detail pages.",
-  },
+  // {
+  //   client: "Samsung",
+  //   year: "2021",
+  //   image: img("sam-report.png"),
+  //   alt: "Samsung UX report",
+  //   description:
+  //     "UX report of research and recommendations for improvements to the ‘Ratings & Reviews’ feature used across samsung.co.uk.",
+  // },
+  // {
+  //   client: "Samsung",
+  //   year: "2021",
+  //   image: img("sam-recs.png"),
+  //   alt: "Samsung UX recommendations",
+  //   description:
+  //     "UX recommendations for ‘Ratings & Reviews’, detailing LOE estimations and ‘quick wins’.",
+  // },
+  // {
+  //   client: "Samsung",
+  //   year: "2021",
+  //   image: img("sam-proto.png"),
+  //   alt: "Samsung Neo QLED prototype",
+  //   fit: "contain",
+  //   description:
+  //     "ProtoPie prototype demonstrating UX optimisation & interactions for the Neo QLED TV feature page.",
+  // },
+  // {
+  //   client: "Samsung",
+  //   year: "2021",
+  //   image: img("sam-noted.png"),
+  //   alt: "Annotated Samsung wireframes",
+  //   fit: "contain",
+  //   description:
+  //     "UX wireframes, annotated with the reasoning behind design decisions.",
+  // },
+  // {
+  //   client: "Samsung",
+  //   year: "2021",
+  //   image: img("sam-journeymap.png"),
+  //   alt: "Samsung QLED journey map",
+  //   description:
+  //     "Journey flow mapping how users move from the QLED feature page through to product detail pages.",
+  // },
   {
     client: "AXS Europe",
     year: "2017–2021",
@@ -453,14 +442,14 @@ export const designWork: DesignWorkItem[] = [
     description:
       "Wireframes and user flows for season, match and pot ticket purchasing, and delivery selection in checkout.",
   },
-  {
-    client: "AXS Europe",
-    year: "2017–2021",
-    image: img("axs-emails.png"),
-    alt: "AXS ticket emails",
-    description:
-      "UX/UI design and build of multi-brand transactional email templates.",
-  },
+  // {
+  //   client: "AXS Europe",
+  //   year: "2017–2021",
+  //   image: img("axs-emails.png"),
+  //   alt: "AXS ticket emails",
+  //   description:
+  //     "UX/UI design and build of multi-brand transactional email templates.",
+  // },
   {
     client: "AXS Europe",
     year: "2017–2021",
@@ -523,45 +512,45 @@ export const designWork: DesignWorkItem[] = [
     alt: "TripAdvisor responsive emails",
     description: "Visual design of C2C and B2C responsive emails.",
   },
-  {
-    client: "TripAdvisor",
-    year: "2015",
-    image: img("ta_weather-trig.png"),
-    alt: "Holiday Lettings weather-triggered emails",
-    description:
-      "Concept designs for weather-triggered B2C emails for TA sub-brand Holiday Lettings.",
-  },
-  {
-    client: "The White Company",
-    year: "2017",
-    image: img("twc-process.png"),
-    alt: "The White Company UX artefacts",
-    description:
-      "UX artefacts: flow diagrams, responsive grid templates, research and documentation.",
-  },
-  {
-    client: "The White Company",
-    year: "2017",
-    image: img("twc-clothing.png"),
-    alt: "The White Company product pages",
-    description: "Clothing product detail pages; before and after.",
-  },
-  {
-    client: "The White Company",
-    year: "2017",
-    image: img("twc-fragrance.png"),
-    alt: "The White Company fragrance pages",
-    description:
-      "Fragrance category and product pages across desktop and mobile.",
-  },
-  {
-    client: "The White Company",
-    year: "2017",
-    image: img("twc1.png"),
-    alt: "The White Company flows and templates",
-    description:
-      "Site flows, wireframes and responsive templates for product pages.",
-  },
+  // {
+  //   client: "TripAdvisor",
+  //   year: "2015",
+  //   image: img("ta_weather-trig.png"),
+  //   alt: "Holiday Lettings weather-triggered emails",
+  //   description:
+  //     "Concept designs for weather-triggered B2C emails for TA sub-brand Holiday Lettings.",
+  // },
+  // {
+  //   client: "The White Company",
+  //   year: "2017",
+  //   image: img("twc-process.png"),
+  //   alt: "The White Company UX artefacts",
+  //   description:
+  //     "UX artefacts: flow diagrams, responsive grid templates, research and documentation.",
+  // },
+  // {
+  //   client: "The White Company",
+  //   year: "2017",
+  //   image: img("twc-clothing.png"),
+  //   alt: "The White Company product pages",
+  //   description: "Clothing product detail pages; before and after.",
+  // },
+  // {
+  //   client: "The White Company",
+  //   year: "2017",
+  //   image: img("twc-fragrance.png"),
+  //   alt: "The White Company fragrance pages",
+  //   description:
+  //     "Fragrance category and product pages across desktop and mobile.",
+  // },
+  // {
+  //   client: "The White Company",
+  //   year: "2017",
+  //   image: img("twc1.png"),
+  //   alt: "The White Company flows and templates",
+  //   description:
+  //     "Site flows, wireframes and responsive templates for product pages.",
+  // },
   {
     client: "Universal Music Group",
     year: "2011",
@@ -579,15 +568,15 @@ export const designWork: DesignWorkItem[] = [
     description:
       "Responsive UI design for a business travel management & booking app.",
   },
-  {
-    client: "Skyscanner",
-    year: "2015",
-    image: img("ss-phones.png"),
-    alt: "Skyscanner app on phones",
-    fit: "contain",
-    description:
-      "Responsive UI design for a business travel management & booking app.",
-  },
+  // {
+  //   client: "Skyscanner",
+  //   year: "2015",
+  //   image: img("ss-phones.png"),
+  //   alt: "Skyscanner app on phones",
+  //   fit: "contain",
+  //   description:
+  //     "Responsive UI design for a business travel management & booking app.",
+  // },
   {
     client: "T.M. Lewin",
     year: "2014",

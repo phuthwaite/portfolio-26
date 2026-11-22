@@ -107,11 +107,6 @@ export default function Experience() {
           {recent.map((job) => (
             <li key={job.company} className="rounded bg-surface px-4 py-3">
               <JobHeader job={job} as="h3" />
-              {job.brief && (
-                <p className="mt-1 text-[15px] leading-[22px] text-white">
-                  {job.brief}
-                </p>
-              )}
               <Collapsible open={details}>
                 <p className="mt-2 max-w-[680px] text-[15px] leading-6 text-pretty text-white">
                   {noOrphan(job.summary)}
