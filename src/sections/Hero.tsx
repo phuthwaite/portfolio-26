@@ -1,5 +1,5 @@
 import audioPng from "../assets/audio.png";
-import portraitPng from "../assets/portrait-ph.png";
+import portrait from "../assets/poggs-portrait.webp";
 import heroGlowSvg from "../assets/hero-glow.svg";
 import { track } from "../lib/analytics";
 import heroLineSvg from "../assets/hero-line-stroke.svg";
@@ -110,13 +110,13 @@ export default function Hero() {
         {/* Figma: portrait */}
         {SHOW_PORTRAIT && (
           <img
-            src={portraitPng}
+            src={portrait}
             alt="Portrait of Pauline Huthwaite"
-            width={447}
-            height={563}
+            width={433}
+            height={571}
             // transparent cut-out; it stands on the glowing line (y 593), which is drawn in front of it.
             // On small screens it's centred behind the name, title and nav, faded towards the bottom so they stay legible.
-            className="absolute bottom-0 left-1/2 w-[min(92vw,480px)] -translate-x-1/2 max-lg:[mask-image:linear-gradient(to_bottom,#000_45%,rgb(0_0_0/0.55)_80%)] lg:top-[30px] lg:bottom-auto lg:left-[562px] lg:w-[447px] lg:translate-x-0"
+            className="absolute bottom-0 left-1/2 w-[min(92vw,480px)] -translate-x-1/2 max-lg:[mask-image:linear-gradient(to_bottom,#000_45%,rgb(0_0_0/0.55)_75%,rgb(0_0_0/0.12)_90%)] lg:top-[23px] lg:bottom-auto lg:left-[580px] lg:w-[433px] lg:translate-x-0"
           />
         )}
         {/* Figma: Content-Intro */}
