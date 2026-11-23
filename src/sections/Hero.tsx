@@ -50,13 +50,13 @@ function Title() {
 // Figma: Hero > nav
 // The hero is the starting point rather than a section, so none of its items is shown as active.
 // Every item gets the same width so the tiles are evenly spaced whatever their label: on phones a
-// tile-wide slot with the label overhanging evenly either side, on desktop equal columns as wide as
-// the longest label.
+// tile-wide slot with the label overhanging evenly either side, on tablets (480px up) larger tiles
+// spread across the width of the name, on desktop equal columns as wide as the longest label.
 function Nav() {
   return (
     <nav
       aria-label="Sections"
-      className="grid auto-cols-[48px] grid-flow-col justify-center gap-6 lg:auto-cols-fr lg:justify-start lg:gap-0"
+      className="grid auto-cols-[48px] grid-flow-col justify-center gap-6 min-[30rem]:auto-cols-[64px] min-[30rem]:justify-between min-[30rem]:gap-0 sm:auto-cols-[76px] lg:auto-cols-fr lg:justify-start"
     >
       {navItems.map((item) => (
         <a
@@ -66,15 +66,15 @@ function Nav() {
           className="group flex flex-col items-center gap-[10px] lg:gap-[9px]"
         >
           {/* row keeps the height of the (larger) active tile so the layout doesn't shift */}
-          <span className="flex h-[60px] items-center lg:h-[70.2px]">
+          <span className="flex h-[60px] items-center min-[30rem]:h-[70px] sm:h-[82px] lg:h-[70.2px]">
             <NavTile
               icon={item.icon}
               active={false}
               bright
-              className="size-[48px] group-hover:[--glass-border:rgb(235_200_245/0.6)] lg:size-[54.79px]"
+              className="size-[48px] group-hover:[--glass-border:rgb(235_200_245/0.6)] min-[30rem]:size-[64px] sm:size-[76px] lg:size-[54.79px]"
             />
           </span>
-          <span className="text-[10px] font-medium whitespace-nowrap text-white/40 uppercase transition-colors group-hover:text-white group-focus-visible:text-white lg:text-[10.8px]">
+          <span className="text-[10px] font-medium whitespace-nowrap text-white/60 uppercase transition-colors group-hover:text-white group-focus-visible:text-white sm:text-[12px] lg:text-[10.8px] lg:text-white/40">
             {item.label}
           </span>
         </a>
@@ -115,15 +115,16 @@ export default function Hero() {
             width={433}
             height={571}
             // transparent cut-out; it stands on the glowing line (y 593), which is drawn in front of it.
-            // On small screens it's centred behind the name, title and nav, faded towards the bottom so they stay legible.
-            className="absolute bottom-0 left-1/2 w-[min(92vw,480px)] -translate-x-1/2 max-lg:[mask-image:linear-gradient(to_bottom,#000_45%,rgb(0_0_0/0.55)_75%,rgb(0_0_0/0.12)_90%)] lg:top-[23px] lg:bottom-auto lg:left-[580px] lg:w-[433px] lg:translate-x-0"
+            // On small screens it's centred behind the name, title and nav. From 480px to desktop the hand rises
+            // behind the nav labels, so it's faded towards the bottom to keep them legible.
+            className="absolute bottom-0 left-1/2 w-[min(92vw,480px)] -translate-x-1/2 min-[30rem]:max-lg:[mask-image:linear-gradient(to_bottom,#000_45%,rgb(0_0_0/0.55)_75%,rgb(0_0_0/0.12)_90%)] lg:top-[23px] lg:bottom-auto lg:left-[580px] lg:w-[433px] lg:translate-x-0"
           />
         )}
         {/* Figma: Content-Intro */}
         <div className="relative z-10 flex flex-col items-center gap-4 text-center lg:items-start lg:gap-[14.4px] lg:pt-[167px] lg:text-left">
           <Name />
           <Title />
-          <div className="mt-6 lg:mt-[30.6px]">
+          <div className="mt-6 min-[30rem]:w-[min(84%,520px)] lg:mt-[30.6px] lg:w-auto">
             <Nav />
           </div>
         </div>
