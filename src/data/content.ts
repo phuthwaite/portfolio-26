@@ -648,34 +648,16 @@ export type CaseStudy = {
   artAlt: string;
   /** Brand colour for the title, stats and link */
   accent: string;
-  href: string;
+  /** The study's full page; leave out until it exists and "Read more" is hidden */
+  href?: string;
 };
 
 // TODO: Holibob still needs its summary.
 const placeholderSummary = ["Full case study coming soon."];
 
-// Figma: HB 2, VW 2, SS 2, AXS 2, TWC 2 — ordered most recent first, as in Experience.
-// `href`: the study's full page (/case-studies/<id>) once it exists; "#case-studies" until then.
+// Figma: HB 2, VW 2, SS 2, AXS 2, TWC 2 — ordered most recent first, as in Experience,
+// except Holibob, which goes last until it's ready.
 export const caseStudies: CaseStudy[] = [
-  {
-    id: "holibob",
-    title: "Personalised Travel Experiences",
-    logo: holibobLogo,
-    logoAlt: "Holibob",
-    logoWidth: 105.75,
-    logoHeight: 24,
-    company: "Holibob Ltd - Travel Experiences",
-    summary: placeholderSummary,
-    stats: [
-      { value: "3074%", label: "revenue increase" },
-      { value: "90%", label: "conversion rate increase" },
-      { value: "50%", label: "engagement rate" },
-    ],
-    artAlt:
-      "Holibob travel app screens: welcome, recommended tour and tour details",
-    accent: "#6fcdc4",
-    href: "#case-studies",
-  },
   {
     id: "vw",
     title: "CRM Design System",
@@ -759,5 +741,24 @@ export const caseStudies: CaseStudy[] = [
     artAlt: "The White Company product page on desktop and mobile",
     accent: "#dddddd",
     href: "/case-studies/twc",
+  },
+  {
+    id: "holibob",
+    title: "Personalised Travel Experiences",
+    logo: holibobLogo,
+    logoAlt: "Holibob",
+    logoWidth: 105.75,
+    logoHeight: 24,
+    company: "Holibob Ltd - Travel Experiences",
+    summary: placeholderSummary,
+    stats: [
+      { value: "3074%", label: "revenue increase" },
+      { value: "90%", label: "conversion rate increase" },
+      { value: "50%", label: "engagement rate" },
+    ],
+    artAlt:
+      "Holibob travel app screens: welcome, recommended tour and tour details",
+    accent: "#6fcdc4",
+    // not ready yet: no link until its case study exists
   },
 ];

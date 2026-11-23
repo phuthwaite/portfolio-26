@@ -36,7 +36,7 @@ function CaseStudyPreview({
   offset: number;
 }) {
   const { Art, crop, shiftX = 0 } = caseStudyArt[study.id];
-  const external = study.href.startsWith("http");
+  const external = study.href?.startsWith("http");
   const p = progressOf(0, offset);
   // text hands over at the midpoint (outgoing gone before incoming appears); artwork overlaps a little
   const textOpacity = Math.max(0, 1 - 2 * Math.abs(offset));
@@ -106,29 +106,32 @@ function CaseStudyPreview({
             </div>
           )}
           {/* Figma: cta */}
-          {/* the site's own case study pages open in the same tab; anything external opens a new one */}
-          <a
-            href={study.href}
-            onClick={(e) => {
-              track("case-study-read-more", { study: study.id });
-              // studies with a deck open it over the page (the link still works if opened in a new tab)
-              if (!caseStudyDecks[study.id] || e.metaKey || e.ctrlKey || e.shiftKey) return;
-              e.preventDefault();
-              openDeck(study.id);
-            }}
-            {...(external && { target: "_blank", rel: "noopener noreferrer" })}
-            className={`group mt-9 inline-flex flex-col pt-1 text-(--accent) ${external ? "cursor-new-window" : ""}`}
-          >
-            <span className="inline-flex items-center gap-1.5 text-sm leading-[1.6] font-semibold tracking-[0.08em] uppercase">
-              Read more
-              <span className="sr-only">
-                : {study.title}
-                {external && " (opens in a new tab)"}
+          {/* the site's own case study pages open in the same tab; anything external opens a new one;
+              studies that aren't ready yet have no link */}
+          {study.href && (
+            <a
+              href={study.href}
+              onClick={(e) => {
+                track("case-study-read-more", { study: study.id });
+                // studies with a deck open it over the page (the link still works if opened in a new tab)
+                if (!caseStudyDecks[study.id] || e.metaKey || e.ctrlKey || e.shiftKey) return;
+                e.preventDefault();
+                openDeck(study.id);
+              }}
+              {...(external && { target: "_blank", rel: "noopener noreferrer" })}
+              className={`group mt-9 inline-flex flex-col pt-1 text-(--accent) ${external ? "cursor-new-window" : ""}`}
+            >
+              <span className="inline-flex items-center gap-1.5 text-sm leading-[1.6] font-semibold tracking-[0.08em] uppercase">
+                Read more
+                <span className="sr-only">
+                  : {study.title}
+                  {external && " (opens in a new tab)"}
+                </span>
+                <LinkArrow className="-my-1 size-[1.25em]" />
               </span>
-              <LinkArrow className="-my-1 size-[1.25em]" />
-            </span>
-            <FillUnderline />
-          </a>
+              <FillUnderline />
+            </a>
+          )}
         </div>
 
         {/* Figma: stats */}
