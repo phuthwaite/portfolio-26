@@ -77,7 +77,7 @@ export const samsung: DeckDef = {
             <img src={logo} alt="Samsung" width={240} height={37} className="mb-6 h-auto w-[180px] lg:mb-[3.26cqw] lg:w-[12.5cqw]" />
             <h1 className={type.h1}>Customer Rewards</h1>
             <p className="mt-4 text-[24px] leading-[1.2] font-medium tracking-[0.04em] lg:mt-[1.04cqw] lg:text-[2.5cqw]">
-              Samsung UK / Cheil
+              Samsung UK
               <br />
               2021
             </p>
@@ -103,7 +103,7 @@ export const samsung: DeckDef = {
                 Partner offers included products such as <strong>Adobe Photoshop Lightroom, Fiit, Deezer, YouTube Premium, Calm Premium and Google Play</strong>.
               </p>
               <p>
-                I was the <strong>Lead UX</strong> resource on the project, and collaborated with Product, Development and Design teams to
+                I was the <strong>Lead UX</strong> resource on the project, and collaborated with Product, Development and VisualDesign teams to
                 successfully deliver this exclusive customer rewards experience.
               </p>
             </div>

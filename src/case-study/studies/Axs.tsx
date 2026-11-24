@@ -120,11 +120,11 @@ export const axs: DeckDef = {
             <h2 className={`${type.h2} mb-5 lg:mb-[1.5cqw]`}>Project Summary</h2>
             <div className={type.body}>
               <p>
-                The new design was modular from the start, splitting event, ticket, order and payment, and venue details into sections, with
+                The new design was modular from the start, splitting event, ticket, order & payment, and venue information into sections, with
                 text styled to show hierarchy – much clearer and easier to read.
               </p>
               <p>
-                The template could be reskinned for each brand with minimal code changes. Brand colours were hard-coded through the
+                The template could be reskinned for each brand/event with minimal code changes. Brand colours were hard-coded through the
                 components, so emails kept their identity even with images turned off.
               </p>
             </div>
@@ -340,12 +340,12 @@ export const axs: DeckDef = {
           </Card>
           <Card x={35.35} y={26} w={29.3} h={62} title="Resourcing">
             <p>With dedicated development resource, the project could likely have been delivered in half the time.</p>
-            <p>My developer colleague’s support was invaluable, but a designer learning markup and deployment on the job is not an efficient way to work.</p>
+            <p>My dev colleague’s support was invaluable, but a designer learning markup and deployment on the job was not an efficient way to work.</p>
           </Card>
           <Card x={67.05} y={26} w={29.3} h={62} title="Advocacy">
             <p>
               Research and feedback sessions with colleagues led me to propose back-end improvements for setting up event emails and
-              e-tickets.
+              etickets.
             </p>
             <p>The detailed RFC was approved, but never taken forward.</p>
           </Card>

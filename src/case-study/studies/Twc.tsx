@@ -83,14 +83,14 @@ export const twc: DeckDef = {
             <h2 className={`${type.h2} mb-5 lg:mb-[1.5cqw]`}>Role</h2>
             <div className={type.body}>
               <p>
-                I was the <strong>Lead UX consultant</strong> for this optimisation project, working alongside the Product Manager and
+                I was the <strong>Lead UX consultant</strong> for this redesign/optimisation project, working alongside the Product Manager and
                 reporting to the Head of Digital.
               </p>
               <p>
                 I was responsible for conducting research, redesigning detail and listing pages for various product purchase journeys, and
                 improving the checkout experience.
               </p>
-              <p>On top of a set list of business requirements, the brief was an improved user experience overall.</p>
+              <p>On top of a set list of business requirements, the brief called for an overall improvement to user experience and visual design.</p>
             </div>
           </At>
         </>
@@ -125,11 +125,11 @@ export const twc: DeckDef = {
             <h2 className={`${type.h2} mb-6 lg:mb-[2cqw]`}>Hypothesis</h2>
             <div className="text-[19px] leading-[1.45] lg:text-[2.1cqw] [&_p+p]:mt-[0.8em]">
               <p>
-                <strong>Less is more.</strong> Let the high-end products speak for themselves, without overwhelming people with marketing.
+                <strong>Less is more.</strong> Let the high-end products speak for themselves, without overwhelming users with marketing clutter.
               </p>
               <p>
-                Gently guide them through the product journey, and be smart about cross-sell (smarter, not louder). Many are repeat customers:
-                have the detail to hand without forcing it on them, let them add to bag in simple steps, and make checkout seamless.
+                Gently guide them through the product journey, and be smart about cross-sells (smarter, not louder). Many users are repeat customers.
+                Have product details to hand without forcing it on them, let them add to bag in simple steps, and make checkout seamless.
               </p>
             </div>
           </At>
@@ -224,8 +224,8 @@ export const twc: DeckDef = {
           <At x={3.65} y={19.5} w={32}>
             <h2 className={`${type.h2} mb-5 lg:mb-[1.5cqw]`}>Flows & Templates</h2>
             <div className={type.body}>
-              <p>User journeys were mapped, then structured into sitemaps and user flows for each purchase journey.</p>
-              <p>The checkout flow was developed further to account for different scenarios and edge cases, alongside responsive grid templates.</p>
+              <p>Existing user journeys were mapped, then structured into logical sitemaps and flows for each purchase journey across various business units.</p>
+              <p>The checkout flow was further refined to account for different scenarios and edge cases, employing modern web technologies alongside responsive layouts.</p>
             </div>
           </At>
           <At x={38} y={12} w={58} h={78}>
@@ -249,7 +249,7 @@ export const twc: DeckDef = {
               </p>
               <p>Once the compositions were agreed, high-fidelity mockups tested real content and fit with the rest of the site.</p>
               <p>
-                Click-through InVision prototypes outlined the user flows, and hard-coded UI prototypes showed real interactions – helping
+                Click-through InVision prototypes illustrated the user flows, and hard-coded UI prototypes showed real interactions – helping
                 stakeholders understand and approve them.
               </p>
             </div>
@@ -290,17 +290,16 @@ export const twc: DeckDef = {
             <h2 className={type.h2}>Result</h2>
           </At>
           <Card x={3.65} y={26} w={29.3} h={60} title="Built and lasting">
-            <p>The designs were implemented 18 months after I left – and years later, the site is still mostly my designs.</p>
+            <p>The designs were finally implemented 18 months after I left, following the replatforming process – and years later, the site is still mostly my designs.</p>
           </Card>
           <Card x={35.35} y={26} w={29.3} h={60} title="Requirements met">
             <p>
-              Ratings and reviews, ‘get the look’, recommended products, quick view, portrait photos for clothing and responsive design – and
-              new checkout options: Collect+, international delivery, gift boxing and gift vouchers.
+              Ratings and reviews, ‘get the look’, recommended products, quick view, portrait photos for clothing, and responsive design. New checkout options: Collect+, international delivery, gift boxing and gift voucher redemption.
             </p>
           </Card>
           <Card x={67.05} y={26} w={29.3} h={60} title="Growth">
-            <p>After launch, the site rose to the top 50 of the UK Retail Index Top 500, up from the top 150.</p>
-            <p>Profits kept rising – even through the pandemic, when the stores had to close.</p>
+            <p>After launch, the site rose to the top 50 of the UK Retail Index Top 500, up from the top 150 prior to the redesign.</p>
+            <p>Profits kept rising – even through the pandemic, when the physicalstores had to close.</p>
           </Card>
         </>
       ),

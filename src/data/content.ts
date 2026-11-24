@@ -666,13 +666,13 @@ export const caseStudies: CaseStudy[] = [
     logoWidth: 35,
     logoHeight: 35,
     company: "Volkswagen Group UK",
-    role: "Experience Lead via Havas: research, system architecture, build, documentation and training.",
+    role: "Experience Lead: research, system architecture, build, documentation and training.",
     summary: [
-      "One modular Figma email design system for six Volkswagen Group brands, keeping each distinct – from discovery to handoff.",
+      "Modular email design system for E2E CRM journey acrosssix Volkswagen Group UK brands.",
     ],
     stats: [{ value: "60%", label: "reduction in production time" }],
     artAlt:
-      "Marketing emails for Volkswagen Group brands including CUPRA, Škoda, VW, Audi and VW Commercial Vehicles",
+      "Marketing emails for Volkswagen Group brands including CUPRA, Škoda, SEAT, Audi, VW and VW Commercial Vehicles",
     accent: "#b3d7dd",
     href: "/case-studies/vw",
   },
@@ -683,8 +683,8 @@ export const caseStudies: CaseStudy[] = [
     logoAlt: "Samsung",
     logoWidth: 154.44,
     logoHeight: 24,
-    company: "Samsung Electronics UK",
-    role: "Lead UX via Cheil, over an eight-week launch: research, journeys, flows, wireframes and prototypes.",
+    company: "Samsung UK",
+    role: "UX Lead: research, journeys, flows, wireframes and prototypes.",
     summary: [
       "An end-to-end rewards journey for the Galaxy S21 UK launch, turning complex token and code redemption into a friction-free path.",
     ],
@@ -707,9 +707,9 @@ export const caseStudies: CaseStudy[] = [
     logoWidth: 64,
     logoHeight: 27.71,
     company: "AXS Europe - Live Event Ticketing",
-    role: "Sole UK UX/UI designer: research, design, and building the templates in XSLT.",
+    role: "SeniorUX/UI designer: research, design, development and deployment",
     summary: [
-      "Text-heavy order and e-ticket emails, redesigned as one modular template – reskinned for venues, promoters and events, and localised for Sweden.",
+      "Modular email templates serving multiple brands, languages and ticket packages. Designed in Figma/Sketch and coded in XML and XSLT.",
     ],
     stats: [
       { value: "97%", label: "open rate" },
@@ -729,7 +729,7 @@ export const caseStudies: CaseStudy[] = [
     logoWidth: 163.46,
     logoHeight: 34,
     company: "The White Company",
-    role: "Lead UX consultant: research, flows, wireframes, prototypes and high-fidelity design.",
+    role: "Lead UX consultant: research, flows, wireframes, prototypes, high-fidelity design and dev handoff.",
     summary: [
       "A research-led redesign of product listing, product detail and checkout journeys, across desktop and mobile.",
     ],
@@ -749,7 +749,7 @@ export const caseStudies: CaseStudy[] = [
     logoAlt: "Holibob",
     logoWidth: 105.75,
     logoHeight: 24,
-    company: "Holibob Ltd - Travel Experiences",
+    company: "Holibob Ltd - Personalised Travel Experiences",
     summary: placeholderSummary,
     stats: [
       { value: "3074%", label: "revenue increase" },
@@ -757,7 +757,7 @@ export const caseStudies: CaseStudy[] = [
       { value: "50%", label: "engagement rate" },
     ],
     artAlt:
-      "Holibob travel app screens: welcome, recommended tour and tour details",
+      "Holibob travel app screens: welcome, product listing and product details",
     accent: "#6fcdc4",
     // not ready yet: no link until its case study exists
   },
