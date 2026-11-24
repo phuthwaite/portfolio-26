@@ -668,11 +668,11 @@ export const caseStudies: CaseStudy[] = [
     company: "Volkswagen Group UK",
     role: "Experience Lead: research, system architecture, build, documentation and training.",
     summary: [
-      "Modular email design system for E2E CRM journey acrosssix Volkswagen Group UK brands.",
+      "Modular email design system for the E2E CRM journey across six Volkswagen Group UK brands.",
     ],
     stats: [{ value: "60%", label: "reduction in production time" }],
     artAlt:
-      "Marketing emails for Volkswagen Group brands including CUPRA, Škoda, SEAT, Audi, VW and VW Commercial Vehicles",
+      "Marketing emails for Volkswagen Group brands including CUPRA, Škoda, Audi, VW and VW Commercial Vehicles",
     accent: "#b3d7dd",
     href: "/case-studies/vw",
   },
@@ -707,7 +707,7 @@ export const caseStudies: CaseStudy[] = [
     logoWidth: 64,
     logoHeight: 27.71,
     company: "AXS Europe - Live Event Ticketing",
-    role: "SeniorUX/UI designer: research, design, development and deployment",
+    role: "Senior UX/UI designer: research, design, development and deployment.",
     summary: [
       "Modular email templates serving multiple brands, languages and ticket packages. Designed in Figma/Sketch and coded in XML and XSLT.",
     ],

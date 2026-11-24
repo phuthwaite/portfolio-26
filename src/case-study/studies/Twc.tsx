@@ -129,7 +129,7 @@ export const twc: DeckDef = {
               </p>
               <p>
                 Gently guide them through the product journey, and be smart about cross-sells (smarter, not louder). Many users are repeat customers.
-                Have product details to hand without forcing it on them, let them add to bag in simple steps, and make checkout seamless.
+                Have product details to hand without forcing them on people, let them add to bag in simple steps, and make checkout seamless.
               </p>
             </div>
           </At>
@@ -299,7 +299,7 @@ export const twc: DeckDef = {
           </Card>
           <Card x={67.05} y={26} w={29.3} h={60} title="Growth">
             <p>After launch, the site rose to the top 50 of the UK Retail Index Top 500, up from the top 150 prior to the redesign.</p>
-            <p>Profits kept rising – even through the pandemic, when the physicalstores had to close.</p>
+            <p>Profits kept rising – even through the pandemic, when the physical stores had to close.</p>
           </Card>
         </>
       ),

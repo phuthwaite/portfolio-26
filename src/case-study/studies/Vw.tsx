@@ -123,7 +123,7 @@ export const vw: DeckDef = {
             <h2 className={`${type.h2} mb-5 lg:mb-[1.5cqw]`}>Role & Scope</h2>
             <div className={type.body}>
               <p>
-                As <strong>Experience Lead</strong> with <strong>Havas</strong>, I created a production-ready, multi-brand email design system in
+                As <strong>Experience Lead</strong>, I created a production-ready, multi-brand email design system in
                 Figma – from discovery and research to build, QA, documentation and training, over almost a year.
               </p>
               <p>

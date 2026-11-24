@@ -103,7 +103,7 @@ export const samsung: DeckDef = {
                 Partner offers included products such as <strong>Adobe Photoshop Lightroom, Fiit, Deezer, YouTube Premium, Calm Premium and Google Play</strong>.
               </p>
               <p>
-                I was the <strong>Lead UX</strong> resource on the project, and collaborated with Product, Development and VisualDesign teams to
+                I was the <strong>Lead UX</strong> resource on the project, and collaborated with Product, Development and Visual Design teams to
                 successfully deliver this exclusive customer rewards experience.
               </p>
             </div>
