@@ -1,4 +1,4 @@
-import { defineConfig, type Plugin } from 'vite'
+import { defineConfig, loadEnv, type Plugin } from 'vite'
 import react from '@vitejs/plugin-react'
 import tailwindcss from '@tailwindcss/vite'
 
@@ -49,7 +49,31 @@ const oldPageRedirects = (): Plugin => ({
   },
 })
 
+// Staging (preview.pixels.ph) is any Cloudflare Pages build of a branch other than main: it's kept out of
+// search results and labelled, so it can't be mistaken for the live site. Cloudflare sets CF_PAGES_BRANCH;
+// the live GitHub Pages build and local builds don't have it.
+const staging = (): Plugin => ({
+  name: 'staging',
+  apply: 'build',
+  transformIndexHtml: () => [
+    { tag: 'meta', attrs: { name: 'robots', content: 'noindex, nofollow' }, injectTo: 'head' },
+    {
+      tag: 'div',
+      attrs: {
+        style:
+          'position:fixed;top:0;left:50%;transform:translateX(-50%);z-index:100;pointer-events:none;padding:4px 12px 5px;border-radius:0 0 8px 8px;background:#ffd166;color:#0d0f22;font:600 11px/1.2 Montserrat,sans-serif;letter-spacing:.08em;text-transform:uppercase',
+      },
+      children: 'Staging',
+      injectTo: 'body',
+    },
+  ],
+})
+
 // https://vite.dev/config/
-export default defineConfig({
-  plugins: [react(), tailwindcss(), spaFallback(), oldPageRedirects()],
+export default defineConfig(({ mode }) => {
+  const branch = loadEnv(mode, '.', 'CF_PAGES').CF_PAGES_BRANCH
+  const isStaging = !!branch && branch !== 'main'
+  return {
+    plugins: [react(), tailwindcss(), isStaging && staging(), spaFallback(), oldPageRedirects()],
+  }
 })
