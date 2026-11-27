@@ -3,15 +3,15 @@ import { Label } from "../components/Widget";
 import { FillUnderline, LinkArrow } from "../components/LinkDecor";
 import { track } from "../lib/analytics";
 import { contact, contactIntro } from "../data/content";
+import AnalyticsNote from "../components/AnalyticsNote";
 
 // The Contact frame only contains its title in Figma; the details come from the CV. (The LinkedIn
-// recommendations have their own section, after Case Studies.) The extra bottom padding keeps the last link
-// clear of the dock and the analytics note above it (AnalyticsNote, shown while this section is active).
+// recommendations have their own section, after Case Studies.)
 export default function Contact() {
   return (
     <section
       id="contact"
-      className="min-h-[480px] pt-[15px] pb-40 lg:min-h-[862px]"
+      className="min-h-[480px] pt-[15px] pb-28 lg:min-h-[862px]"
     >
       <div className="site-container">
         <SectionHeading>Contact</SectionHeading>
@@ -60,6 +60,7 @@ export default function Contact() {
             })}
           </ul>
         </div>
+        <AnalyticsNote className="relative mt-16 lg:mt-24" />
       </div>
     </section>
   );
