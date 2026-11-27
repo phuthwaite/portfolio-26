@@ -362,6 +362,12 @@ export type DesignWorkItem = {
   alt: string;
   /** "contain" for artwork whose shape is far from the card's, so it isn't cropped */
   fit?: "cover" | "contain";
+  /** no card behind the image (no tinted background or border), for artwork with its own background */
+  plain?: boolean;
+  /** enlarges the image within its card, e.g. 1.2 */
+  zoom?: number;
+  /** the point the image is positioned and zoomed on, as a CSS position (default: top for cropped images, centre otherwise) */
+  focus?: string;
 };
 
 // Images live in src/assets/gallery (copied from the old site). Every file in that folder is
@@ -434,14 +440,14 @@ export const designWork: DesignWorkItem[] = [
     description:
       "Responsive redesign of ticket purchasing & management for top-tier Swedish football and hockey teams.",
   },
-  {
-    client: "AXS Europe",
-    year: "2017–2021",
-    image: img("axs1.png"),
-    alt: "AXS wireframes and user flows",
-    description:
-      "Wireframes and user flows for season, match and pot ticket purchasing, and delivery selection in checkout.",
-  },
+  // {
+  //   client: "AXS Europe",
+  //   year: "2017–2021",
+  //   image: img("axs1.png"),
+  //   alt: "AXS wireframes and user flows",
+  //   description:
+  //     "Wireframes and user flows for season, match and pot ticket purchasing, and delivery selection in checkout.",
+  // },
   // {
   //   client: "AXS Europe",
   //   year: "2017–2021",
@@ -461,6 +467,7 @@ export const designWork: DesignWorkItem[] = [
     client: "PokerStars",
     year: "2013",
     image: img("ps-nacho.png"),
+    plain: true,
     alt: "Team PokerStars microsite",
     description:
       "Visual design and branding for the ‘Team PokerStars’ player microsite.",
@@ -473,18 +480,19 @@ export const designWork: DesignWorkItem[] = [
     description:
       "UX/UI and visual design of microsite templates for ‘PokerStars Live’ casino rooms across Europe.",
   },
-  {
-    client: "PokerStars",
-    year: "2013",
-    image: img("ps-hippo2.png"),
-    alt: "PokerStars Live microsite on laptop and tablet",
-    description:
-      "‘PokerStars Live’ microsite templates across desktop and tablet.",
-  },
+  // {
+  //   client: "PokerStars",
+  //   year: "2013",
+  //   image: img("ps-hippo2.png"),
+  //   alt: "PokerStars Live microsite on laptop and tablet",
+  //   description:
+  //     "‘PokerStars Live’ microsite templates across desktop and tablet.",
+  // },
   {
     client: "PokerStars",
     year: "2013",
     image: img("ps-2d.png"),
+    plain: true,
     alt: "PokerStars 2D graphics",
     description:
       "2D graphics created for various PokerStars campaigns and promotions.",
@@ -493,6 +501,7 @@ export const designWork: DesignWorkItem[] = [
     client: "PokerStars",
     year: "2013",
     image: img("ps-3d.png"),
+    plain: true,
     alt: "PokerStars 3D graphics",
     description:
       "3D assets created in Cinema 4D for various PokerStars campaigns and promotions.",
@@ -509,6 +518,7 @@ export const designWork: DesignWorkItem[] = [
     client: "TripAdvisor",
     year: "2015",
     image: img("ta_emails-resp.png"),
+    plain: true,
     alt: "TripAdvisor responsive emails",
     description: "Visual design of C2C and B2C responsive emails.",
   },
@@ -555,6 +565,8 @@ export const designWork: DesignWorkItem[] = [
     client: "Universal Music Group",
     year: "2011",
     image: img("umg-web.png"),
+    zoom: 1.32,
+    focus: "50% 45%",
     alt: "Artist microsites",
     fit: "contain",
     description:
@@ -595,6 +607,8 @@ export const designWork: DesignWorkItem[] = [
     client: "Karen Millen",
     year: "2013",
     image: img("km-web.png"),
+    zoom: 1.12,
+    focus: "50% 40%",
     alt: "Karen Millen microsite",
     description:
       "Front-end development of a responsive parallax microsite for a global ATL fashion campaign.",
@@ -607,14 +621,14 @@ export const designWork: DesignWorkItem[] = [
     description:
       "UX/UI design of setup & settings screens for a new digital television service.",
   },
-  {
-    client: "Marks & Spencer",
-    year: "2012",
-    image: img("mns-web.png"),
-    alt: "Marks & Spencer feature pages",
-    fit: "contain",
-    description: "Visual design of feature pages across marksandspencer.com.",
-  },
+  // {
+  //   client: "Marks & Spencer",
+  //   year: "2012",
+  //   image: img("mns-web.png"),
+  //   alt: "Marks & Spencer feature pages",
+  //   fit: "contain",
+  //   description: "Visual design of feature pages across marksandspencer.com.",
+  // },
   {
     client: "Marks & Spencer",
     year: "2012",
@@ -626,6 +640,7 @@ export const designWork: DesignWorkItem[] = [
   {
     client: "SEGA",
     image: img("sega1.png"),
+    plain: true,
     alt: "SEGA game promotions",
     description:
       "Promotional banners and game microsites, including Sega Rally, Iron Man and Beijing 2008.",

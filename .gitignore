@@ -28,3 +28,6 @@ dist-ssr
 
 # Slide captures for Figma (scripts/capture-decks.mjs)
 deck-captures
+
+# Design section captures for Figma (scripts/capture-design.mjs)
+design-captures

@@ -8,7 +8,8 @@
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "capture:decks": "node scripts/capture-decks.mjs"
+    "capture:decks": "node scripts/capture-decks.mjs",
+    "capture:design": "node scripts/capture-design.mjs"
   },
   "dependencies": {
     "react": "^19.1.0",

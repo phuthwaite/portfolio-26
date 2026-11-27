@@ -144,7 +144,8 @@ export default function DesignWork() {
                       aria-label={`${item.client}: ${item.alt}`}
                       aria-hidden={i !== index}
                       onClick={() => !wasDragged() && goTo(i)}
-                      className="glass-panel relative aspect-[882/499] cursor-[inherit] w-(--card-w) shrink-0 overflow-hidden [--glass-radius:0]"
+                      // a glass card behind the image, unless the artwork has its own background (plain)
+                      className={`relative aspect-[882/499] cursor-[inherit] w-(--card-w) shrink-0 overflow-hidden ${item.plain ? "" : "glass-panel [--glass-radius:0]"}`}
                       style={{ opacity: 0.44 + 0.56 * p }}
                     >
                       {/* Image zooms from 1.5x to 1x as the card settles (momentum-slider "images") */}
@@ -155,10 +156,22 @@ export default function DesignWork() {
                         <img
                           src={item.image}
                           alt={item.alt}
-                          loading="lazy"
+                          // the current card and its neighbours load straight away; the rest wait. (Left to
+                          // the browser, lazy images that slide in by transform don't always load.)
+                          loading={Math.abs(i - index) <= 1 ? "eager" : "lazy"}
                           decoding="async"
                           draggable={false}
                           className={`size-full ${item.fit === "contain" ? "object-contain p-4 lg:p-6" : "object-cover object-top"}`}
+                          // optional zoom and focus point, for artwork with a lot of empty space around it
+                          style={
+                            item.zoom || item.focus
+                              ? {
+                                  objectPosition: item.focus,
+                                  transform: item.zoom ? `scale(${item.zoom})` : undefined,
+                                  transformOrigin: item.focus,
+                                }
+                              : undefined
+                          }
                         />
                       </span>
                     </button>

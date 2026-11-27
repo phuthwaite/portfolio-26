@@ -14,6 +14,7 @@ import DesignWork from "./sections/DesignWork";
 import Experience from "./sections/Experience";
 import Contact from "./sections/Contact";
 import Deck from "./case-study/Deck";
+import AnalyticsNote from "./components/AnalyticsNote";
 import { caseStudyDecks } from "./case-study/pages";
 import { useDeckRoute } from "./case-study/deckRoute";
 
@@ -98,6 +99,7 @@ export default function App() {
         </Slide>
       </main>
       <Dock active={active} visible={heroHidden} />
+      <AnalyticsNote visible={heroHidden && active === "contact"} />
       {deck && <Deck key={deck.id} deck={deck} />}
     </div>
   );
