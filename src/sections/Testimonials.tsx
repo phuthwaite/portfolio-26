@@ -4,6 +4,7 @@ import { CarouselControls } from "../components/CarouselArrows";
 import { FillUnderline, LinkArrow } from "../components/LinkDecor";
 import { recommendationsUrl, testimonials } from "../data/content";
 import { track, trackOnce } from "../lib/analytics";
+import { useEdgeNav } from "../hooks/useEdgeNav";
 
 // Profile photos: src/assets/testimonials/<first-last>.(jpg|png|webp), e.g. graeme-bryce.jpg.
 // Anyone without a photo gets their initials instead.
@@ -111,13 +112,22 @@ export default function Testimonials() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [playing, index, step]);
 
+  // click either side of the section (outer 40% of the window) to step back or forward, as in the other
+  // carousels; it loops, so both sides always work
+  const { cursorClass, edgeNav } = useEdgeNav({ index, count, goTo, loop: true });
+
   // Each hidden quote waits on the side it will arrive from: the next few to the right, the previous
   // few to the left, measured round the loop so the last-to-first wrap still slides forwards
   const sideOf = (i: number) =>
     wrap(i - index) <= count / 2 ? "translate-x-10" : "-translate-x-10";
 
   return (
-    <section id="testimonials" aria-label="Recommendations" className="pt-[15px] pb-32 lg:flex lg:min-h-[max(681px,100vh)] lg:flex-col lg:pb-40">
+    <section
+      id="testimonials"
+      aria-label="Recommendations"
+      {...edgeNav}
+      className={`pt-[15px] pb-32 lg:flex lg:min-h-[max(681px,100vh)] lg:flex-col lg:pb-40 ${cursorClass}`}
+    >
       {/* on desktop the quote sits centred in the space below the title */}
       <div className="site-container lg:flex lg:flex-1 lg:flex-col">
         <SectionHeading

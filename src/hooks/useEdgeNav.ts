@@ -3,7 +3,8 @@ import { useState, type MouseEvent, type PointerEvent } from "react";
 // Mouse-only "click either side" navigation for a carousel section: the left and right `share` of the
 // viewport step back and forward, shown by a chevron cursor (cursor-prev / cursor-next in index.css).
 // Links and anything marked data-edge-nav-ignore (e.g. the arrow buttons) keep their own behaviour, a
-// zone with nowhere to go does nothing, and touch screens are left to swiping.
+// zone with nowhere to go does nothing (unless the carousel loops round), and touch screens are left to
+// swiping.
 const IGNORE = "a, input, textarea, select, [data-edge-nav-ignore]";
 
 type Side = "prev" | "next" | null;
@@ -14,12 +15,15 @@ export function useEdgeNav({
   goTo,
   wasDragged = () => false,
   share = 0.4,
+  loop = false,
 }: {
   index: number;
   count: number;
   goTo: (i: number) => void;
   wasDragged?: () => boolean;
   share?: number;
+  /** the carousel wraps round, so both sides always have somewhere to go */
+  loop?: boolean;
 }) {
   const [side, setSide] = useState<Side>(null);
 
@@ -31,9 +35,9 @@ export function useEdgeNav({
   ): Side => {
     if (pointerType !== "mouse") return null;
     if (target instanceof Element && target.closest(IGNORE)) return null;
-    if (x < window.innerWidth * share) return at > 0 ? "prev" : null;
+    if (x < window.innerWidth * share) return loop || at > 0 ? "prev" : null;
     if (x > window.innerWidth * (1 - share))
-      return at < count - 1 ? "next" : null;
+      return loop || at < count - 1 ? "next" : null;
     return null;
   };
 
