@@ -3,6 +3,7 @@ import { Label } from "../components/Widget";
 import { FillUnderline, LinkArrow } from "../components/LinkDecor";
 import { track } from "../lib/analytics";
 import { contact, contactIntro } from "../data/content";
+import AnalyticsNote from "../components/AnalyticsNote";
 
 // The Contact frame only contains its title in Figma; the details come from the CV. (The LinkedIn
 // recommendations have their own section, after Case Studies.)
@@ -50,6 +51,7 @@ export default function Contact() {
             })}
           </ul>
         </div>
+        <AnalyticsNote className="relative mt-16 lg:mt-24" />
       </div>
     </section>
   );

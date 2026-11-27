@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState, type KeyboardEvent, type ReactNode, type TouchEvent } from "react";
 import { useEdgeNav } from "../hooks/useEdgeNav";
-import { trackOnce } from "../lib/analytics";
+import { track, trackOnce } from "../lib/analytics";
 import { closeDeck } from "./deckRoute";
 import { SlideFooter } from "./slide";
 
@@ -82,10 +82,33 @@ export default function Deck({ deck }: { deck: DeckDef }) {
     setTimeout(closeDeck, reduce ? 0 : CLOSE_MS);
   };
 
+  // furthest slide reached, for the summary sent when the deck closes
+  const furthest = useRef(0);
   useEffect(() => {
     document.title = `${deck.title} · ${deck.client} — Pauline Huthwaite`;
     trackOnce("case-study-slide", { study: deck.id, slide: `${index + 1} ${deck.slides[index].label}` });
-  }, [deck, index]);
+    furthest.current = Math.max(furthest.current, index + 1);
+    if (index === count - 1) trackOnce("case-study-finished", { study: deck.id });
+  }, [deck, index, count]);
+
+  // when the deck closes (or the tab does, with it open): how far through it got, and roughly how long it
+  // was open, in bands so the numbers group well in the dashboard
+  useEffect(() => {
+    const opened = Date.now();
+    let sent = false;
+    const send = () => {
+      if (sent) return;
+      sent = true;
+      const s = (Date.now() - opened) / 1000;
+      const time = s < 30 ? "under 30s" : s < 60 ? "30s–1 min" : s < 180 ? "1–3 min" : s < 300 ? "3–5 min" : "5 min+";
+      track("case-study-closed", { study: deck.id, reached: `${furthest.current} of ${count}`, time });
+    };
+    window.addEventListener("pagehide", send);
+    return () => {
+      window.removeEventListener("pagehide", send);
+      send();
+    };
+  }, [deck, count]);
 
   const onKeyDown = (e: KeyboardEvent) => {
     const keys: Record<string, number> = { ArrowRight: index + 1, PageDown: index + 1, " ": index + 1, ArrowLeft: index - 1, PageUp: index - 1, Home: 0, End: count - 1 };
