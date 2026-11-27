@@ -1,4 +1,6 @@
+import { useRef, useState } from "react";
 import audioPng from "../assets/audio.png";
+import nameAudio from "../assets/huthwaite.m4a";
 import portrait from "../assets/poggs-portrait.webp";
 import heroGlowSvg from "../assets/hero-glow.svg";
 import { track } from "../lib/analytics";
@@ -7,8 +9,25 @@ import NavTile from "../components/NavTile";
 import NameLockup from "../components/NameLockup";
 import { navItems } from "../data/content";
 
-// Figma: Hero > Content-Intro > Name (desktop sizes are 90% of Figma's)
+// Figma: Hero > Content-Intro > Name (desktop sizes are 90% of Figma's). The speaker button plays a short
+// recording of the name (from the previous site), loaded on the first click; the icon brightens while it plays.
 function Name() {
+  const audio = useRef<HTMLAudioElement | null>(null);
+  const [playing, setPlaying] = useState(false);
+  const play = () => {
+    if (!audio.current) {
+      audio.current = new Audio(nameAudio);
+      audio.current.addEventListener("ended", () => setPlaying(false));
+      audio.current.addEventListener("pause", () => setPlaying(false));
+    }
+    const clip = audio.current;
+    clip.currentTime = 0;
+    clip
+      .play()
+      .then(() => setPlaying(true))
+      .catch(() => setPlaying(false));
+    track("name-audio-play");
+  };
   return (
     <div className="relative w-[min(84%,520px)] lg:w-full lg:max-w-[574px]">
       <h1>
@@ -18,12 +37,13 @@ function Name() {
       <button
         type="button"
         aria-label="Hear how to pronounce my name"
-        className="absolute top-[58%] left-[98.8%] flex size-[28px] items-center justify-center rounded-2xl lg:size-[25px] bg-[rgb(13_13_13/0.5)] transition-colors hover:bg-white/10"
+        onClick={play}
+        className="group absolute top-[58%] left-[98.8%] flex size-[28px] cursor-pointer items-center justify-center rounded-2xl lg:size-[25px] bg-[rgb(13_13_13/0.5)] transition-colors hover:bg-white/10"
       >
         <img
           src={audioPng}
           alt=""
-          className="h-[14px] w-[16.39px] object-cover opacity-50 lg:h-[12.6px] lg:w-[14.75px]"
+          className={`h-[14px] w-[16.39px] object-cover transition-opacity lg:h-[12.6px] lg:w-[14.75px] ${playing ? "opacity-100" : "opacity-50 group-hover:opacity-80"}`}
         />
       </button>
     </div>
